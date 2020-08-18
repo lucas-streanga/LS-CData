@@ -23,7 +23,7 @@ making any memory allocation calls when using `vector`. `vector` allows:
 ### Overhead
 `vector` will use 24 bytes of memory on most 64-bit systems. This memory is used for
 critical data for a vector. Each additional item added to a `vector` will not use any
-memory overhead, making `vector` much lighter than a linked list.
+memory overhead, making `vector` much lighter than a linked list in the right context.
 
 ### Summary of Functions
 - `vcreate(size_t size_of_each_element)` will return a `vector`. Initializes the vector. Size of each
