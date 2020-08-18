@@ -2,7 +2,7 @@
 My library for data structures in C. Currently, only `vector` is implemented.
 
 ## Build
-Run `make` to build the library from source. The library can then be statically linked in your projects.
+Run `make` to build the library from source. The library can then be statically linked in your projects. Be sure to `include` lsvector.h.
 
 ## Vector
 `vector` is a dynamic data structure for C. Vector aims to be efficient, easy to use,
@@ -51,3 +51,7 @@ undesirable events like segmentation faults. If the index is invalid, `NULL` wil
 ### Memory
 `vector` will handle memory management for your data. Just be sure to call `vfree` once a vector is no longer useful or is about to
 go out of scope to prevent memory leaks.
+
+### Notes
+- `vector` defaults to a size of 5 elements. This is defined in `lsvector.h`.
+-  When `vector` reaches its max size, it will resize to twice the previous max size. The data location may or may not change.  
