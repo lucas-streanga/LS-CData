@@ -2,7 +2,7 @@
 My library for data structures in C. Currently, only `vector` is implemented.
 
 ## Build
-Run `make` to build the library from source. The library can then be statically linked in your projects. Be sure to `include` lsvector.h.
+A pre-built binary .a file is included. Run `make` to build the library from source. The library can then be statically linked in your projects. Be sure to `include` lsvector.h.
 
 ## Vector
 `vector` is a dynamic data structure for C. Vector aims to be efficient, easy to use,
