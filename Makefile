@@ -18,5 +18,11 @@ cleanup:
 
 clean:
 	@echo "Clean build..."
+	rm $(LIB)
 	@make cleanup
 	@make
+
+full-rebuild:
+	@echo "Full Rebuild..."
+	@make clean
+	@make cleanup
