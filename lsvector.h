@@ -12,7 +12,8 @@ typedef struct vector
   unsigned int max_size; //Max elements in the vector
   size_t size_of_elements; //Specific size for each element
   void *data; //Pointer to the actual data being stored.
-} vector;
+}
+vector;
 
 //Prototypes here...
 
