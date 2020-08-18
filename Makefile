@@ -15,7 +15,6 @@ $(OBJ1) : $(SRC1) $(HFILES)
 cleanup:
 	@echo "Deleting object and executable files..."
 	rm $(OBJ1)
-	rm $(LIB)
 
 clean:
 	@echo "Clean build..."
