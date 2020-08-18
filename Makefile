@@ -1,6 +1,6 @@
 SRC1 = lsvector.c
 OBJ1 = $(SRC1:.c=.o)
-LIB = liblsvector.a
+LIB = liblsdata.a
 
 HFILES = lsvector.h
 
