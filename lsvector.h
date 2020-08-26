@@ -3,7 +3,7 @@
 
 #include<stdlib.h>
 
-#define VDEFAULT_MAX_SIZE 5;
+#define VDEFAULT_MAX_SIZE 5
 
 //The main vector structure
 typedef struct vector
