@@ -28,9 +28,13 @@ void vadd(vector *v, void * data_to_add)
   else
   {
     v->max_size = v->max_size << 1; //Double the size of our array...
-    v->data = realloc(v->data, (v->max_size * v->size_of_elements));
-    memcpy(v->data + (v->cur_size * v->size_of_elements), data_to_add, v->size_of_elements);
-    v->cur_size++;
+    void *new_alloc = realloc(v->data, (v->max_size * v->size_of_elements));
+    if(new_alloc != NULL)
+    {
+      v->data = new_alloc;
+      memcpy(v->data + (v->cur_size * v->size_of_elements), data_to_add, v->size_of_elements);
+      v->cur_size++;
+    }
   }
 }
 
@@ -46,10 +50,14 @@ void vadd_front(vector *v, void * data_to_add)
   else //Must realloc...
   {
     v->max_size = v->max_size << 1; //Double the size of our array...
-    v->data = realloc(v->data, (v->max_size * v->size_of_elements));
-    memcpy(v->data + (v->size_of_elements), v->data, v->size_of_elements * v->cur_size);
-    memcpy(v->data, data_to_add, v->size_of_elements);
-    v->cur_size++;
+    void *new_alloc = realloc(v->data, (v->max_size * v->size_of_elements));
+    if(new_alloc != NULL)
+    {
+      v->data = new_alloc;
+      memcpy(v->data + (v->size_of_elements), v->data, v->size_of_elements * v->cur_size);
+      memcpy(v->data, data_to_add, v->size_of_elements);
+      v->cur_size++;
+    }
   }
 }
 

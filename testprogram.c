@@ -5,8 +5,8 @@
 int main(void)
 {
   //Print the sizes.
-  printf("Size of vector: %d\nSize of list: %d", sizeof(vector), sizeof(list));
-  printf("\nSize of iterator: %d\n", sizeof(iterator));
+  printf("Size of vector: %ld\nSize of list: %ld", sizeof(vector), sizeof(list));
+  printf("\nSize of iterator: %ld\n", sizeof(iterator));
   //Create a vector and list.
   vector v = vcreate(sizeof(int));
   list l = lcreate(sizeof(int));
@@ -16,6 +16,11 @@ int main(void)
   for(i = 1; i < 1000; i = i*2)
   {
     ladd(&l, &i);
+    printf("%d ", i);
+  }
+  for(i = 1; i < 1000; i++)
+  {
+    vadd(&v, &i);
     printf("%d ", i);
   }
   lremove(&l, 0);
@@ -29,6 +34,10 @@ int main(void)
   for(i = 0; i < lsize(l); i++)
   {
     printf("\nAt index %d: %d", i, *(int *)lat(&l, i));
+  }
+  for(i = 0; i < vsize(v); i++)
+  {
+    printf("\nAt index %d: %d", i, *(int *)vat(&v, i));
   }
   printf("\nSize of our list: %d\n", lsize(l));
 

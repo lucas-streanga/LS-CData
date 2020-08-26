@@ -20,20 +20,21 @@ $(OBJ2) : $(SRC2) $(HFILES)
 	gcc -c $(SRC2)
 
 cleanup:
-	@echo "Deleting object and executable files..."
-	rm *.o
+	@echo "Deleting object files..."
+	rm -f *.o
+
+full-cleanup:
+	@echo "Deleting executable and object files"
+	rm -f *.o
+	rm -f $(EXE)
 
 clean:
 	@echo "Clean build..."
-	rm $(LIB)
-	@make cleanup
+	@make full-cleanup
 	@make
-
-full-rebuild:
-	@echo "Full Rebuild..."
-	@make clean
 	@make cleanup
 
-testprogram: $(TESTPROGSRC) $(LIB)
+testprogram: $(TESTPROGSRC)
 	@echo "Building test program..."
+	@make clean
 	gcc -o $(TESTPROG) $(TESTPROGSRC) $(LIB)

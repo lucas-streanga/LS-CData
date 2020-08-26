@@ -44,8 +44,11 @@ void list_alloc(list *this_list, lnode **loc, void **data_to_add)
   lnode n;
   n.next = NULL;
   n.data = malloc(this_list->size_of_elements);
-  **loc = n;
-  memcpy((*loc)->data, *data_to_add, this_list->size_of_elements);
+  if(*loc != NULL && n.data != NULL)
+  {
+    **loc = n;
+    memcpy((*loc)->data, *data_to_add, this_list->size_of_elements);
+  }
 }
 
 void list_dealloc(lnode **loc)
