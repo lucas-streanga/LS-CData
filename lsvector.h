@@ -33,6 +33,8 @@ int vremove(vector *, int);
 int vset(vector *, int, void *);
 //vat - will return a pointer to data at an index. NULL if invalid index.
 void * vat(vector *, int);
+//vfind - will return a pointer to data it is trying to find.
+void * vfind(vector *, void *);
 //vfree - will deallocate the vector data
 void vfree(vector *);
 

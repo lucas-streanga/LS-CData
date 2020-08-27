@@ -12,8 +12,17 @@ int main(void)
   //Create a vector and list.
   vector v = vcreate(sizeof(int));
   list l = lcreate(sizeof(int));
-  string s = screate("hello!!yes yes hello world");
+  string s = screate("hello!!");
+  sset(&s, "new string!!! This is a new string!!!");
+  sset(&s, "hi there");
+  sset(&s, "mmm whatcha say...");
+  sset(&s, "hey hey hey hey hey hey");
+  sadd(&s, "!!");
+  sclear(&s);
+  sadd_front(&s, "... ");
+  //sset(&s, "ll");
   printf("%s", sget(&s));
+  printf("\n%d", ssize(s));
 
   //For loop to test adding items to a list...
   int i;
@@ -27,6 +36,7 @@ int main(void)
     vadd(&v, &i);
     //printf("%d ", i);
   }
+
   lremove(&l, 0);
   lremove(&l, 1);
 	//Print out the first element in the list..
@@ -47,6 +57,7 @@ int main(void)
 
   vfree(&v);
   lfree(&l);
+  sfree(&s);
 
   return 0;
 }

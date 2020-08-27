@@ -98,6 +98,17 @@ void * vat(vector *v, int index)
   return NULL;
 }
 
+void * vfind(vector *v, void *data_to_find)
+{
+  int i;
+  for(i = 0; i < v->cur_size; i++)
+  {
+    if(!memcmp(v->data + (i * v->size_of_elements), data_to_find, v->size_of_elements))
+      return (v->data + (i * v->size_of_elements));
+  }
+  return NULL;
+}
+
 void vfree(vector *v)
 {
   free(v->data);

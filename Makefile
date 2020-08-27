@@ -45,3 +45,4 @@ testprogram: $(TESTPROGSRC)
 	@make
 	gcc -g -c $(TESTPROGSRC)
 	gcc -o $(TESTPROG) $(TESTPROGOBJ) $(OBJ1) $(OBJ2) $(OBJ3)
+	@make cleanup

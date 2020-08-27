@@ -23,6 +23,19 @@ string;
 
 //function to create a string.
 string screate(char *);
+
 const char * sget(string *);
+
+void sset(string *, char *);
+
+void sfree(string *);
+
+int ssize(string);
+
+void sadd(string *, char *);
+
+void sadd_front(string *, char *);
+
+void sclear(string *);
 
 #endif
