@@ -20,11 +20,11 @@ int lempty(list l)
     return 0;
 }
 
-iterator lget(list l)
+iterator lget(list *l)
 {
   iterator it;
-  it.start = l.head;
-  it.current = l.head;
+  it.l = l;
+  it.current = l->head;
   return it;
 }
 
@@ -35,7 +35,7 @@ void itnext(iterator *it)
 
 void itreset(iterator *it)
 {
-  it->current = it->start;
+  it->current = it->l->head;
 }
 
 void list_alloc(list *this_list, lnode **loc, void **data_to_add)

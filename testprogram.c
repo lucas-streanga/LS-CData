@@ -40,7 +40,7 @@ int main(void)
   lremove(&l, 0);
   lremove(&l, 1);
 	//Print out the first element in the list..
-  iterator it = lget(l);
+  iterator it = lget(&l);
 	for(it; it.current != ITEND; itnext(&it))
   {
     //printf("\nAt interator: %d", *(int *)lat_iterator(&l, it));

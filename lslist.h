@@ -23,7 +23,7 @@ list;
 
 typedef struct iterator
 {
-  lnode *start;
+  list *l; //the list that corresponds to this iterator.
   lnode *current;
 }
 iterator;
@@ -35,15 +35,15 @@ list lcreate(size_t);
 //lempty - find if list is empty
 int lempty(list);
 //lget - returns an iterator for the list.
-iterator lget(list);
+iterator lget(list *);
 //itnext - increment the iterator
 void itnext(iterator *);
 //itreset - set current location to start
 void itreset(iterator *);
 //list_alloc - function used internally for list allocation. Users shouldn't use this...
-void list_alloc(list *, lnode **, void **);
+//void list_alloc(list *, lnode **, void **);
 //list_dealloc - function used internally for list data deallocation. Users shouldn't use this...
-void list_dealloc(lnode **);
+//void list_dealloc(lnode **);
 //ladd - add data to the end of the list...
 void ladd(list *, void *);
 //ladd_front - add data to the front of the list
