@@ -6,19 +6,20 @@
 int main(void)
 {
   //Print the sizes.
-  printf("Size of vector: %ld\nSize of list: %ld", sizeof(vector), sizeof(list));
-  printf("\nSize of iterator: %ld\n", sizeof(iterator));
-  printf("\nSize of string: %ld\n", sizeof(string));
+  //printf("Size of vector: %ld\nSize of list: %ld", sizeof(vector), sizeof(list));
+  //printf("\nSize of iterator: %ld\n", sizeof(iterator));
+  //printf("\nSize of string: %ld\n", sizeof(strvec));
   //Create a vector and list.
   vector v = vcreate(sizeof(int));
   list l = lcreate(sizeof(int));
-  string s = screate("hello!!");
+  strvec s = screate("hello!!");
   sset(&s, "new string!!! This is a new string!!!");
   sset(&s, "hi there");
   sset(&s, "mmm whatcha say...");
   sset(&s, "hey hey hey hey hey hey");
   sadd(&s, "!!");
-  sclear(&s);
+  saddc(&s, '.');
+  saddc_front(&s, 'y');
   sadd_front(&s, "... ");
   //sset(&s, "ll");
   printf("%s", sget(&s));

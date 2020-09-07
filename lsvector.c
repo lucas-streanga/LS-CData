@@ -8,7 +8,7 @@ vector vcreate(size_t size_of_elements)
   v.cur_size = 0;
   v.max_size = VDEFAULT_MAX_SIZE;
   v.size_of_elements = size_of_elements;
-  //Initial alloc
+  /*Initial alloc*/
   v.data = malloc(v.size_of_elements * v.max_size);
   return v;
 }
@@ -27,7 +27,7 @@ void vadd(vector *v, void * data_to_add)
   }
   else
   {
-    v->max_size = v->max_size << 1; //Double the size of our array...
+    v->max_size = v->max_size << 1; /*Double the size of our array...*/
     void *new_alloc = realloc(v->data, (v->max_size * v->size_of_elements));
     if(new_alloc != NULL)
     {
@@ -40,16 +40,16 @@ void vadd(vector *v, void * data_to_add)
 
 void vadd_front(vector *v, void * data_to_add)
 {
-  if(v->cur_size < v->max_size) //No realloc is necessary
+  if(v->cur_size < v->max_size) /*No realloc is necessary*/
   {
-    //Two memcpy are necessary - one to move the vector down and then one to add our new data...
+    /*Two memcpy are necessary - one to move the vector down and then one to add our new data...*/
     memcpy(v->data + (v->size_of_elements), v->data, v->size_of_elements * v->cur_size);
     memcpy(v->data, data_to_add, v->size_of_elements);
     v->cur_size++;
   }
-  else //Must realloc...
+  else /*Must realloc...*/
   {
-    v->max_size = v->max_size << 1; //Double the size of our array...
+    v->max_size = v->max_size << 1; /*Double the size of our array...*/
     void *new_alloc = realloc(v->data, (v->max_size * v->size_of_elements));
     if(new_alloc != NULL)
     {
@@ -68,7 +68,7 @@ int vsize(vector v)
 
 int vremove(vector *v, int index)
 {
-  //We need to do a memcpy to move everything to the left...
+  /*We need to do a memcpy to move everything to the left...*/
   if(index < v->cur_size && index >= 0)
   {
     memcpy(v->data + (index * v->size_of_elements), v->data + ((index + 1) * v->size_of_elements), v->size_of_elements * (v->cur_size - index - 1));

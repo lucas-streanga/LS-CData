@@ -2,7 +2,7 @@
 #include<string.h>
 #include"lslist.h"
 
-//Source file for our list structure.
+/*Source file for our list structure.*/
 
 list lcreate(size_t size_of_elements)
 {
@@ -53,7 +53,7 @@ void list_alloc(list *this_list, lnode **loc, void **data_to_add)
 
 void list_dealloc(lnode **loc)
 {
-  //We need to perfrom 2 frees...
+  /*We need to perfrom 2 frees...*/
   if(*loc != NULL && (*loc)->data != NULL)
   {
     free((*loc)->data);
@@ -64,8 +64,8 @@ void list_dealloc(lnode **loc)
 
 void ladd(list *l, void *data_to_add)
 {
-  //We need to iterate through the list to get to the end...
-  if(l->head == NULL) //empty list...
+  /*We need to iterate through the list to get to the end...*/
+  if(l->head == NULL) /*empty list...*/
   {
     list_alloc(l, &(l->head), &(data_to_add));
   }
@@ -82,7 +82,7 @@ void ladd(list *l, void *data_to_add)
 
 void ladd_front(list *l, void *data_to_add)
 {
-  //We need to insert
+  /*We need to insert*/
   if(l->head == NULL)
   {
     list_alloc(l, &(l->head), &(data_to_add));
@@ -91,7 +91,7 @@ void ladd_front(list *l, void *data_to_add)
   {
     lnode *temp = l->head;
     list_alloc(l, &(l->head), &(data_to_add));
-    l->head->next = temp; //relink the list.
+    l->head->next = temp; /*relink the list.*/
   }
 }
 

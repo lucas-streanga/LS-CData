@@ -17,13 +17,13 @@ $(LIB) : $(OBJ1) $(OBJ2) $(OBJ3)
 	ar rcs $(LIB) $(OBJ1) $(OBJ2) $(OBJ3)
 
 $(OBJ1) : $(SRC1) $(HFILES)
-	gcc -g -c $(SRC1)
+	gcc -g -c -std=c89 $(SRC1)
 
 $(OBJ2) : $(SRC2) $(HFILES)
-	gcc -g -c $(SRC2)
+	gcc -g -c -std=c89 $(SRC2)
 
 $(OBJ3) : $(SRC3) $(HFILES)
-	gcc -g -c $(SRC3)
+	gcc -g -c -std=c89 $(SRC3)
 
 cleanup:
 	@echo "Deleting object files..."

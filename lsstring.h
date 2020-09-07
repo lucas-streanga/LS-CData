@@ -3,7 +3,7 @@
 
 #include<stdlib.h>
 
-//This define is used for small string optimization. Small string will not be heap allocated.
+/*This define is used for small string optimization. Small string will not be heap allocated.*/
 #define SMALL_STRING_SIZE 15
 
 typedef union lsstring_allocation_unit
@@ -19,23 +19,27 @@ typedef struct lsstring
   unsigned int max_size;
   string_alloc_unit this_str;
 }
-string;
+strvec;
 
-//function to create a string.
-string screate(char *);
+/*function to create a string vector.*/
+strvec screate(char *);
 
-const char * sget(string *);
+const char * sget(strvec *);
 
-void sset(string *, char *);
+void sset(strvec *, char *);
 
-void sfree(string *);
+void sfree(strvec *);
 
-int ssize(string);
+int ssize(strvec);
 
-void sadd(string *, char *);
+void sadd(strvec *, char *);
 
-void sadd_front(string *, char *);
+void saddc(strvec *, char);
 
-void sclear(string *);
+void sadd_front(strvec *, char *);
+
+void saddc_front(strvec *, char);
+
+void sclear(strvec *);
 
 #endif
