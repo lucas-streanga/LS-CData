@@ -45,8 +45,9 @@ void * funct_vat(vector * v, size_t index)
 {
   if(index >= v->current)
   {
-    printf("Out of bounds vector access in macro vat.\n At %s:%d function %s", __FILE__, __LINE__, __FUNCTION__);
-    exit(0);
+    printf("Out of bounds vector access in macro vat.\nThis can cause a segmentation fault.\n");
+    printf("Vector max index: %llu\nIndex requested: %llu\n", v->current - 1, index);
+    return v->data;
   }
   return v->data + (index * v->size_of_elements);
 }
